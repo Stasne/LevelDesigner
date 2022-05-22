@@ -1,6 +1,7 @@
 import sys
 import design
 import resources
+import ResourceManager
 from PyQt5.QtWidgets import *#QApplication, QMainWindow, QTableWidget, QTableWidgetItem, QHeaderView, QLabel
 from PyQt5.QtGui import QPixmap, QIcon, QBrush
 from PyQt5.QtCore import *
@@ -37,24 +38,19 @@ class MainWindow(QMainWindow, design.Ui_MainWindow):
         self.setupUi(self)
         self.setWindowTitle('Level Designer')
         self.createEditor()
+        # СДЕЛАТЬ СВЯЗКУ НА РЕСУР МАНАГЕР  И ЕГО СДЕЛАТЬ
+        self.actionNew_Resource.triggered.connect(lambda: print("RESS"))
         
     def createEditor(self):
         self.twMain.setColumnCount(30)
         self.twMain.setRowCount(15)
         for j in range(self.twMain.rowCount()):
             for k in range(self.twMain.columnCount()):
-                # self.twMain.setItemDelegateForColumn(k, delegate)
-                # brush = QBrush(QPixmap(":/Resources/__.png"))
-                # brush = QBrush(QPixmap(":/Resources/WL.png").scaled(36, 36, Qt.KeepAspectRatio, Qt.FastTransformation ))
-                # pixmap = QPixmap(":/Resources/WL.png")#.scaled(50, 50, Qt.IgnoreAspectRatio, Qt.FastTransformation )
-                item = self.makeLevelItem(":/Resources/WL.png")
+                item = self.makeLevelItem(":/Resources/__.png")
                 self.twMain.setCellWidget(j, k, item)
 
         self.twMain.verticalHeader().hide()
         self.twMain.horizontalHeader().hide()
-        # self.twMain.verticalHeader().setDefaultSectionSize(35)
-        # self.twMain.horizontalHeader().setDefaultSectionSize(35)
-
         self.twMain.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
         self.twMain.verticalHeader().setSectionResizeMode(QHeaderView.Stretch)
 
