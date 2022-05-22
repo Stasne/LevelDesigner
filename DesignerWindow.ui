@@ -86,6 +86,9 @@
       <property name="showDropIndicator" stdset="0">
        <bool>false</bool>
       </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::MultiSelection</enum>
+      </property>
       <property name="iconSize">
        <size>
         <width>35</width>
@@ -137,6 +140,11 @@
          </property>
          <item>
           <widget class="QLabel" name="label_2">
+           <property name="font">
+            <font>
+             <pointsize>16</pointsize>
+            </font>
+           </property>
            <property name="text">
             <string>Tools:</string>
            </property>
@@ -154,6 +162,11 @@
          </property>
          <item>
           <widget class="QLabel" name="label">
+           <property name="font">
+            <font>
+             <pointsize>16</pointsize>
+            </font>
+           </property>
            <property name="text">
             <string>Properties:</string>
            </property>
@@ -179,21 +192,43 @@
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
     <property name="title">
      <string>File</string>
     </property>
     <addaction name="actionOpen_Level"/>
     <addaction name="actionSave"/>
     <addaction name="separator"/>
-    <addaction name="actionExit"/>
+    <addaction name="actionExitBut"/>
    </widget>
    <widget class="QMenu" name="menuResource">
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
     <property name="title">
      <string>Resource</string>
     </property>
-    <addaction name="actionNew_Resource"/>
+    <widget class="QMenu" name="menuResource_Manager">
+     <property name="title">
+      <string>Resource Manager</string>
+     </property>
+     <addaction name="actionCreate_resource"/>
+     <addaction name="actionEdit_resource"/>
+    </widget>
+    <addaction name="menuResource_Manager"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
+    <property name="font">
+     <font>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
     <property name="title">
      <string>Help</string>
     </property>
@@ -212,14 +247,29 @@
     <string>Save</string>
    </property>
   </action>
-  <action name="actionExit">
+  <action name="actionExitBut">
    <property name="text">
     <string>Exit</string>
    </property>
   </action>
-  <action name="actionNew_Resource">
+  <action name="actionCreate_resource">
    <property name="text">
-    <string>New Resource</string>
+    <string>Create</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionEdit_resource">
+   <property name="text">
+    <string>Edit</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+    </font>
    </property>
   </action>
  </widget>
